@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MathVault — Master Mathematics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showHome()">Math<span>Vault</span></div>
+  <div class="nav-score">
+    <span>Total Score</span>
+    <span class="score-badge" id="totalScore">0 pts</span>
+  </div>
+</nav>
+
+<!-- ════════════ HOME SCREEN ════════════ -->
+<div id="home" class="screen active">
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-tag">✦ Premium Mathematics</div>
+    <h1>Master<br><em>Mathematics</em></h1>
+    <p class="hero-sub">Learn concepts clearly, then sharpen your skills with unlimited practice problems — all beautifully crafted.</p>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">12</div><div class="stat-label">Topics</div></div>
+      <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Questions</div></div>
+      <div class="stat-item"><div class="stat-num" id="homeScore">0</div><div class="stat-label">Your Score</div></div>
+    </div>
+  </div>
+
+  <div class="topics-section">
+    <div class="section-label">Choose a Topic</div>
+    <div class="topic-grid" id="topicGrid"></div>
+  </div>
+</div>
+
+<!-- ════════════ TOPIC PAGE ════════════ -->
+<div id="topic-page" class="screen">
+  <div class="topic-header">
+    <button class="back-btn" onclick="showHome()">← Back to Topics</button>
+    <div class="topic-header-inner">
+      <div class="topic-title-block">
+        <span class="emoji" id="topicEmoji"></span>
+        <h2 id="topicTitle"></h2>
+        <p class="subtitle" id="topicSubtitle"></p>
+      </div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('learn')">Learn</button>
+        <button class="tab-btn" onclick="switchTab('practice')">Practice</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <!-- LEARN -->
+    <div class="learn-panel active" id="learnPanel"></div>
+    <!-- PRACTICE -->
+    <div class="practice-panel" id="practicePanel"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
